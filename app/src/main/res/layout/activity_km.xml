@@ -90,7 +90,7 @@
             android:paddingEnd="10dp"
             tools:ignore="RtlSymmetry">
 
-            <EditText
+            <TextView
                 android:id="@+id/txtKm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                 android:inputType="number">
 
                 <requestFocus />
-            </EditText>
+            </TextView>
 
         </LinearLayout>
 

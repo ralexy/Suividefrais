@@ -10,8 +10,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.Locale;
 
@@ -68,7 +70,7 @@ public class KmActivity extends AppCompatActivity {
 		if (Global.listFraisMois.containsKey(key)) {
 			qte = Global.listFraisMois.get(key).getKm() ;
 		}
-		((EditText)findViewById(R.id.txtKm)).setText(String.format(Locale.FRANCE, "%d", qte)) ;
+		((TextView)findViewById(R.id.txtKm)).setText(String.format(Locale.FRANCE, "%d", qte)) ;
 	}
 	
 	/**
@@ -136,7 +138,7 @@ public class KmActivity extends AppCompatActivity {
 	 */
 	private void enregNewQte() {
 		// enregistrement dans la zone de texte
-		((EditText)findViewById(R.id.txtKm)).setText(String.format(Locale.FRANCE, "%d", qte)) ;
+		((TextView)findViewById(R.id.txtKm)).setText(String.format(Locale.FRANCE, "%d", qte)) ;
 		// enregistrement dans la liste
 		Integer key = annee*100+mois ;
 		if (!Global.listFraisMois.containsKey(key)) {
