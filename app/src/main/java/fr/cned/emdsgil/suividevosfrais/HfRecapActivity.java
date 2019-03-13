@@ -69,7 +69,9 @@ public class HfRecapActivity extends AppCompatActivity {
 		FraisHfAdapter adapter = new FraisHfAdapter(HfRecapActivity.this, liste) ;
 		listView.setAdapter(adapter) ;
 	}
-	
+
+
+
 	/**
 	 * Sur la selection de l'image : retour au menu principal
 	 */
@@ -93,8 +95,6 @@ public class HfRecapActivity extends AppCompatActivity {
 			}
     	});       	
     }
-    
-    
 
 	/**
 	 * Retour à l'activité principale (le menu)
