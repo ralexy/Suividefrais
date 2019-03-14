@@ -17,15 +17,17 @@ class FraisHfAdapter extends BaseAdapter {
 
 	private final ArrayList<FraisHf> lesFrais ; // liste des frais du mois
 	private final LayoutInflater inflater ;
+	private final Integer key;
 
     /**
 	 * Constructeur de l'adapter pour valoriser les propriétés
      * @param context Accès au contexte de l'application
      * @param lesFrais Liste des frais hors forfait
      */
-	public FraisHfAdapter(Context context, ArrayList<FraisHf> lesFrais) {
+	public FraisHfAdapter(Context context, ArrayList<FraisHf> lesFrais, Integer key) {
 		inflater = LayoutInflater.from(context) ;
 		this.lesFrais = lesFrais ;
+		this.key = key;
     }
 	
 	/**
@@ -94,9 +96,15 @@ class FraisHfAdapter extends BaseAdapter {
 					// Suppression de la ligne en question
 					lesFrais.remove(position);
 
-					// TODO : Sauvegarde de la suppression de ligne
+                    Log.d("MSG ******", key + " - " + position);
 
-					// Rafraîchit la liste
+					// On supprime la ligne
+					Global.listFraisMois.get(key).supprFraisHf(position);
+
+                    // TODO : Sauvegarde de la suppression de ligne
+                    Serializer.serialize(Global.listFraisMois, view.getContext()) ;
+
+                    // Rafraîchit la liste
 					notifyDataSetChanged();
 				}
 			}
