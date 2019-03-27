@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
+import fr.cned.emdsgil.suividevosfrais.Global;
+import fr.cned.emdsgil.suividevosfrais.Serializer;
 
 class FraisHfAdapter extends BaseAdapter {
 

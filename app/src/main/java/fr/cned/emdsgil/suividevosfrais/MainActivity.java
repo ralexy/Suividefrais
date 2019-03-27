@@ -11,6 +11,9 @@ import android.widget.ImageButton;
 
 import java.util.Hashtable;
 
+import fr.cned.emdsgil.suividevosfrais.Global;
+import fr.cned.emdsgil.suividevosfrais.Serializer;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -27,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         cmdMenu_clic(((ImageButton) findViewById(R.id.cmdRepas)), RepasActivity.class);
         cmdMenu_clic(((ImageButton) findViewById(R.id.cmdNuitee)), NuiteeActivity.class);
         cmdMenu_clic(((ImageButton) findViewById(R.id.cmdEtape)), EtapeActivity.class);
-        cmdTransfert_clic();
+        cmdTransfert_clic(((ImageButton) findViewById(R.id.cmdEtape)), LoginActivity.class);
+        //cmdTransfert_clic();
     }
 
     @Override
@@ -83,11 +87,16 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Cas particulier du bouton pour le transfert d'informations vers le serveur
      */
-    private void cmdTransfert_clic() {
+    private void cmdTransfert_clic(ImageButton button, final Class classe) {
         findViewById(R.id.cmdTransfert).setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 // envoi les informations sérialisées vers le serveur
                 // en construction
+                //JsonObject infosJson = Global.listFraisMois.toString();
+                System.out.println(Global.listFraisMois.get(0));
+
+                Intent intent = new Intent(MainActivity.this, classe);
+                startActivity(intent);
             }
         });
     }

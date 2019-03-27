@@ -14,6 +14,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import fr.cned.emdsgil.suividevosfrais.Global;
+
 public class HfRecapActivity extends AppCompatActivity {
 
 	@Override

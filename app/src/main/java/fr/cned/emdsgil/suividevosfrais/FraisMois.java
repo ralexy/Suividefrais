@@ -1,12 +1,14 @@
 package fr.cned.emdsgil.suividevosfrais;
 
+import com.google.gson.GsonBuilder;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Classe métier contenant les informations des frais d'un mois
  */
-class FraisMois implements Serializable {
+public class FraisMois implements Serializable {
 
     private Integer mois; // mois concerné
     private Integer annee; // année concernée
@@ -28,6 +30,16 @@ class FraisMois implements Serializable {
 		 * Original : Typage explicit =
 		 * lesFraisHf = new ArrayList<FraisHf>() ;
 		*/
+    }
+
+    /**
+     * Utilisation de la bibliothèque Gson de Google pour convertir cet objet au format JSON
+     * Et directement le passer à l'app web GSB pour mettre à jour ses données médicales
+     * @return
+     */
+    @Override
+    public String toString() {
+        return new GsonBuilder().create().toJson(this, FraisMois.class);
     }
 
     /**

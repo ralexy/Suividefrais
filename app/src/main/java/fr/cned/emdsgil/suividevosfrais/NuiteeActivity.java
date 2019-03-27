@@ -15,6 +15,9 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+import fr.cned.emdsgil.suividevosfrais.Global;
+import fr.cned.emdsgil.suividevosfrais.Serializer;
+
 public class NuiteeActivity extends AppCompatActivity {
 
 	// informations affichées dans l'activité

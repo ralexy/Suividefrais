@@ -12,6 +12,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import fr.cned.emdsgil.suividevosfrais.Global;
+import fr.cned.emdsgil.suividevosfrais.Serializer;
+
 public class HfActivity extends AppCompatActivity {
 
 	@Override

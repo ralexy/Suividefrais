@@ -13,9 +13,10 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.Locale;
+
+import fr.cned.emdsgil.suividevosfrais.Global;
+import fr.cned.emdsgil.suividevosfrais.Serializer;
 
 public class KmActivity extends AppCompatActivity {
 
