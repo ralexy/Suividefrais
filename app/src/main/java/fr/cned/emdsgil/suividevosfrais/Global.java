@@ -36,7 +36,7 @@ abstract class Global {
       * Id du visiteur, vide si non connecté à l'app web GSB
       * Permet de mettre à jour les informations du bon visiteur médical
      */
-    public static String idVisiteur = "a17";
+    public static String idVisiteur = null;
 
     // Url de l'API GSB
     public static final String apiUrl = "http://192.168.1.6/GSB_API/api.php";
@@ -62,18 +62,15 @@ abstract class Global {
         } catch (SecurityException | IllegalArgumentException e) {
             Log.d("ERROR", e.getMessage());
         }
-
-        getListFraisMoisJSON();
     }
 
-    public static void getListFraisMoisJSON() {
-        String jsonObj = new Gson().toJson(listFraisMois);
+    /**
+     * Nécessaire pour obtenir un retour en JSON valide du Hashtable listFraisMois
+     * @return String
+     */
+    public static String getListFraisMoisJSON() {
+        String retourJson = new Gson().toJson(listFraisMois);
 
-        Set<Integer> keys = listFraisMois.keySet();
-
-        for (Integer key : keys) {
-            System.out.println(listFraisMois.get(key).toString());
-            System.out.println(jsonObj.toString());
-        }
+        return retourJson;
     }
 }

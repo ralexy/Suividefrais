@@ -35,7 +35,7 @@ public class FraisMois implements Serializable {
     /**
      * Utilisation de la bibliothèque Gson de Google pour convertir cet objet au format JSON
      * Et directement le passer à l'app web GSB pour mettre à jour ses données médicales
-     * @return
+     * @return String
      */
     @Override
     public String toString() {
