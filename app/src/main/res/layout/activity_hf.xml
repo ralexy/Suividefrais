@@ -128,29 +128,40 @@
             android:layout_weight="0.5"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtMotif"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
+                android:layout_gravity="start"
                 android:layout_weight="1"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="@string/motif"
-                android:labelFor="@+id/txtHfMotif"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/txtHfMotif"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="top|start"
-                android:inputType="text"
-                android:lines="2">
 
-            </EditText>
+                <TextView
+                    android:id="@+id/txtMotif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:labelFor="@+id/txtHfMotif"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="@string/motif"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/txtHfMotif"
+                    android:layout_width="334dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:enabled="true"
+                    android:gravity="left"
+                    android:inputType="text">
+
+                    <requestFocus />
+                </EditText>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 

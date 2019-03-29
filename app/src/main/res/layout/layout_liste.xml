@@ -13,7 +13,7 @@
         android:gravity="end"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/lblListSepare"
@@ -23,7 +23,7 @@
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
         android:text="@string/deux_points"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/txtListMontant"
@@ -33,7 +33,7 @@
         android:gravity="end"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/lblListEuro"
@@ -43,7 +43,7 @@
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
         android:text="@string/euro"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/txtListMotif"
@@ -52,7 +52,7 @@
         android:layout_weight="3.5"
         android:paddingEnd="2dp"
         android:paddingStart="4dp"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <ImageButton
         android:id="@+id/cmdSuppHf"
