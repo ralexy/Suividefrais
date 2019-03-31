@@ -39,7 +39,7 @@ abstract class Global {
     public static String idVisiteur = null;
 
     // Url de l'API GSB
-    public static final String apiUrl = "http://192.168.1.6/GSB_API/api.php";
+    public static final String apiUrl = "https://gsb.alexy-rousseau.com/api/index.php";
 
     /**
      * Modification de l'affichage de la date (juste le mois et l'année, sans le jour)
