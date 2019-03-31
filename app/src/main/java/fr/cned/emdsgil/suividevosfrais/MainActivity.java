@@ -110,8 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     // envoi les informations sérialisées vers le serveur
-                    // en construction
-                    Log.d("MSG ----------", Global.getListFraisMoisJSON());
+                    //Log.d("MSG ----------", Global.getListFraisMoisJSON());
 
                     // Instanciation de RequestQueue
                     RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
@@ -120,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                     StringRequest stringRequest = new StringRequest(Request.Method.POST,Global.apiUrl, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Log.d("Reponse API ------------", response);
+                            Log.d("Reponse API -----------", response);
 
                             try {
                                 JSONObject jsonData = new JSONObject(response);
@@ -145,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     }){
                         @Override
                         protected Map<String,String> getParams(){
-                            Map<String,String> params = new HashMap<String, String>();
+                            Map<String,String> params = new HashMap<>();
                             params.put("action", "synchronize");
                             params.put("memberId", Global.idVisiteur);
                             params.put("expenses", Global.getListFraisMoisJSON());
