@@ -19,13 +19,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
@@ -83,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,Global.apiUrl, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Log.d("Reponse API ------------", response);
+                        Log.d("Reponse API -----------", response);
 
                         try {
                             JSONObject jsonData = new JSONObject(response);
@@ -96,8 +94,10 @@ public class LoginActivity extends AppCompatActivity {
                                 if (jsonData.has("idmembre")) {
                                     Global.idVisiteur = jsonData.getString("idmembre");
 
-                                    // Redirection vers la vue principale
-                                    Intent intent= new Intent(LoginActivity.this, MainActivity.class);
+                                    // Redirection vers la vue principale & synchronisation des données
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    intent.putExtra("synchronize", "true");
+
                                     startActivity(intent);
                                 }
                             } else

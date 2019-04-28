@@ -46,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
         cmdMenu_clic(((ImageButton) findViewById(R.id.cmdNuitee)), NuiteeActivity.class);
         cmdMenu_clic(((ImageButton) findViewById(R.id.cmdEtape)), EtapeActivity.class);
         cmdTransfert_clic(((ImageButton) findViewById(R.id.cmdTransfert)), MainActivity.class);
+
+        // Synchronisation si l'utilisateur vient de se connecter à GSB
+        Intent intent = getIntent();
+
+        if(intent.getStringExtra("synchronize") != null) {
+            Log.d("Synchro login", "Synchronisation réussie à la connexion");
+            ImageButton btnTransfert = (ImageButton) findViewById(R.id.cmdTransfert);
+            btnTransfert.performClick();
+
+            // Suppression de l'extra pour ne réaliser cette action qu'au login
+            intent.removeExtra("synchronize");
+        }
     }
 
     @Override
@@ -101,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Cas particulier du bouton pour le transfert d'informations vers le serveur
      */
-    private void cmdTransfert_clic(ImageButton button, final Class classe) {
+    public void cmdTransfert_clic(ImageButton button, final Class classe) {
         findViewById(R.id.cmdTransfert).setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
 
