@@ -1,4 +1,4 @@
-package fr.bonaparte.gsb.suividevosfrais;
+package fr.cned.emdsgil.suividevosfrais;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("fr.bonaparte.gsb.suividevosfrais", appContext.getPackageName());
+        assertEquals("fr.cned.emdsgil.suividefrais", appContext.getPackageName());
     }
 }

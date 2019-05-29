@@ -103,7 +103,6 @@ class FraisHfAdapter extends BaseAdapter {
 					// On supprime la ligne
 					Global.listFraisMois.get(key).supprFraisHf(position);
 
-                    // TODO : Sauvegarde de la suppression de ligne
                     Serializer.serialize(Global.listFraisMois, view.getContext()) ;
 
                     // Rafraîchit la liste
